@@ -1,21 +1,22 @@
-import './index.css'; // Tailwind CSS
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import UserProfile from './Components/UserProfile';
-import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import UserProfile from "./Components/UserProfile";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <div className="p-6">
-        <Routes>
-        <Route path='/' element={<Home />} />
-          <Route path="/users/:id" element={<UserProfile />} />
-        </Routes>
+    <Router>
+      <div className="min-h-screen bg-amber-50">
+        <NavBar />
+        <div className="container mx-auto p-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/users/:id" element={<UserProfile />} />
+          </Routes>
+        </div>
       </div>
-    </BrowserRouter>
-  );
+    </Router>
+  )
 }
 
-export default App;
+export default App
